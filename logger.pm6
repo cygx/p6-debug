@@ -5,7 +5,7 @@ my class Event {
     has Instant $.instant;
 
     method new(Mu $msg) {
-        my $frame = Backtrace.new[3];
+        my $frame = Backtrace.new[4];
         self.bless(
             msg => $msg,
             file => $frame.file,
@@ -15,7 +15,9 @@ my class Event {
     }
 
     method gist { self.Str }
-    method Str { "[{ DateTime.new($!instant) } $!file:$!line] $!msg" }
+    method Str {
+        "{ DateTime.new($!instant) } $!file:$!line { $!msg.Str.perl }";
+    }
 }
 
 sub EXPORT($cb = &note) {
