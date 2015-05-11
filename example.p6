@@ -1,24 +1,21 @@
 use assert &warn;
+use logger;
 
-assert 0 < 1;
+logger 'asserting 0 > 1';
 assert 0 > 1;
 
 use DEBUG;
 
-assert 0 < 2;
+logger 'asserting 0 > 2';
 assert 0 > 2;
 
-use NDEBUG;
+use NDEBUG <assert>;
 
-assert 0 < 3;
+logger 'asserting 0 > 3';
 assert 0 > 3;
 
-use DEBUG;
+use DEBUG <assert>;
+use NDEBUG <logger>;
 
-assert 0 < 4;
+logger 'asserting 0 > 4';
 assert 0 > 4;
-
-use NDEBUG;
-
-assert 0 < 5;
-assert 0 > 5;
