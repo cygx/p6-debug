@@ -8,7 +8,7 @@ sub EXPORT($cb = &die) {
         $cb; # BUG -- Cannot invoke this object (REPR: Null, cs = 0)
              #        if statement is omitted
 
-        if %*ENV<PERL6_ASSERT> {
+        if %*ENV<PERL6_DEBUG_ASSERT> {
             quasi {
                 $cb(X::Assert.new(:$assertion))
                     unless {{{ $assertion }}}

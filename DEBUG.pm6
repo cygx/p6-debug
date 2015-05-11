@@ -1,4 +1,7 @@
 sub EXPORT {
-    %*ENV<PERL6_ASSERT> = '1';
+    for @_ || BEGIN <assert logger> {
+        %*ENV{"PERL6_DEBUG_{ .uc }"} = '1';
+    }
+
     once EnumMap.new;
 }
