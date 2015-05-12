@@ -27,7 +27,7 @@ sub EXPORT($cb = &note) {
 
         if %*ENV<PERL6_DEBUG_LOGGER> {
             quasi {
-                $cb(Event\.new({{{ $expression }}}));
+                $cb(Event.new({{{ $expression }}}));
             }
         }
     }
