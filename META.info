@@ -7,6 +7,7 @@
         "DEBUG"  : "DEBUG.pm6",
         "NDEBUG" : "NDEBUG.pm6",
         "assert" : "assert.pm6",
+        "dbg"    : "dbg.pm6",
         "logger" : "logger.pm6"
     },
     "depends" : [ ],
