@@ -14,6 +14,7 @@ sub EXPORT($cb = &die) {
                     unless {{{ $assertion }}}
             }
         }
+        else { Nil }
     }
 
     Map.new('&assert' => &assert);

@@ -30,6 +30,7 @@ sub EXPORT($cb = &note) {
                 $cb(Event.new({{{ $expression }}}));
             }
         }
+        else { Nil }
     }
 
     Map.new('&logger' => &logger);
