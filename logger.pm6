@@ -32,5 +32,5 @@ sub EXPORT($cb = &note) {
         }
     }
 
-    EnumMap.new('&logger' => &logger);
+    Map.new('&logger' => &logger);
 }

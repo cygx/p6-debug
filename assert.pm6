@@ -16,5 +16,5 @@ sub EXPORT($cb = &die) {
         }
     }
 
-    EnumMap.new('&assert' => &assert);
+    Map.new('&assert' => &assert);
 }
